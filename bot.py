@@ -1,4 +1,10 @@
 import requests
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+TOKEN = os.getenv("BOT_TOKEN")
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 
@@ -25,8 +31,8 @@ def get_price(coin_id):
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
         "Привет! Я крипто-калькулятор канала CryptoHolder24\n"
-        "Всегда знаю актуальные курсы криптовалют\n\n"
-        "Примеры:\n"
+        "Я всегда знаю актуальные курсы криптовалют и могу подсказать их тебе\n\n"
+        "Введи, например:\n"
         "BTC\n"
         "0.5 BTC\n"
         "1000 USDT"
