@@ -79,7 +79,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("Ошибка. Пример: 0.1 BTC")
 
 # Запуск
-app = ApplicationBuilder().token("8771219391:AAF7-dzXkV3BEUyjSDdR34VJT1UgkFx6fPk").build()
+app = ApplicationBuilder().token(TOKEN).build()
 
 app.add_handler(CommandHandler("start", start))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
